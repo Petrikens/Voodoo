@@ -26,6 +26,7 @@
         aria-label="Custom ProgressSpinner"
       />
     </div>
+    <Toast />
   </div>
   <div v-intersection="loadMorePosts" class="observer"></div>
 </template>
@@ -56,7 +57,12 @@ export default {
       await this.fetchPosts()
       await this.fetchUsers()
     } catch (error) {
-      console.log(error)
+      this.$toast.add({
+        severity: 'error',
+        summary: 'Error Message',
+        detail: error,
+        life: 3000
+      })
     } finally {
       this.isLoading = false
     }
