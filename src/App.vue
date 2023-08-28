@@ -91,6 +91,9 @@ export default {
     gap: 3rem;
     flex-wrap: wrap;
   }
+  &__item {
+    width: 20rem;
+  }
 }
 .spinner {
   width: 50px;

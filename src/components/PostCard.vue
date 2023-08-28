@@ -1,5 +1,5 @@
 <template>
-  <Card style="width: 20rem">
+  <Card style="width: 100%">
     <template #title> {{ post.title }} </template>
     <template #content>
       <p>

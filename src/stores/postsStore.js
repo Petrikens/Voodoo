@@ -66,21 +66,19 @@ export const usePostsStore = defineStore('postsStore', {
           if (this.searchQuery && !this.userIds.length) {
             return
           }
-          if (this.userIds.length) {
-            this.page += 1
+          this.page += 1
 
-            const data = {
-              params: {
-                _limit: this.limit,
-                _page: this.page,
-                userId: this.userIds
-              }
+          const data = {
+            params: {
+              _limit: this.limit,
+              _page: this.page,
+              userId: this.userIds
             }
-
-            const response = await getPosts.fetchPosts(data)
-
-            this.postsList = [...this.postsList, ...response.data]
           }
+
+          const response = await getPosts.fetchPosts(data)
+
+          this.postsList = [...this.postsList, ...response.data]
         } catch (error) {
           throw new Error(error)
         }
