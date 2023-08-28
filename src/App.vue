@@ -14,7 +14,7 @@
         <PostCard :post="post" :users="usersList" />
       </li>
     </TransitionGroup>
-    <div v-if="!postsList.length" style="display: flex; justify-content: center">
+    <div v-if="!postsList.length && !isLoading" style="display: flex; justify-content: center">
       No posts found
     </div>
     <div v-if="isLoading" class="card flex justify-content-center">
